@@ -37,8 +37,6 @@
         "phpmd/phpmd": "^2.8",
         "phpunit/phpunit": "^9.3"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
@@ -59,5 +57,10 @@
         "cs": [
             "php-cs-fixer fix --dry-run --diff --diff-format udiff ./src"
         ]
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
