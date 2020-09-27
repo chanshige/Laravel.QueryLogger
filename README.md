@@ -1,3 +1,4 @@
+[![Packagist](https://img.shields.io/badge/packagist-v1.0.0-blue.svg)](https://packagist.org/packages/chanshige/laravel-query-logger)
 [![Build Status](https://travis-ci.com/chanshige/Laravel.QueryLogger.svg?branch=master)](https://travis-ci.com/chanshige/Laravel.QueryLogger)
 
 # Laravel.QueryLogger
@@ -12,7 +13,7 @@ Application上で実行されるSQLクエリを全てlogへ出力します。
 ## Installation
 with composer (require-dev)
 ```shell script
-$ composer require --dev chanshige/laravel-query-logger:v0.1
+$ composer require --dev chanshige/laravel-query-logger:v1.0
 ```
 
 ## Usage
