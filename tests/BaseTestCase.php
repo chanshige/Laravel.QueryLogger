@@ -13,6 +13,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\ConnectionResolverInterface;
 use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Events\EventServiceProvider;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Log\LogManager;
@@ -50,16 +51,19 @@ abstract class BaseTestCase extends TestCase
 
     protected function database()
     {
+        Model::clearBootedModels();
         $this->app->singleton('db.factory', static function ($app) {
             return new ConnectionFactory($app);
         });
-
         $this->app->singleton('db', static function ($app) {
             return new DatabaseManager($app, $app['db.factory']);
         });
+        $this->app->bind(
+            ConnectionResolverInterface::class,
+            DatabaseManager::class
+        );
 
         $this->app->alias('db', DatabaseManager::class);
-        $this->app->bind(ConnectionResolverInterface::class, DatabaseManager::class);
     }
 
     /**
@@ -68,17 +72,14 @@ abstract class BaseTestCase extends TestCase
     protected function config()
     {
         $filesystem = new Filesystem();
-
         $this->app['config']->set(
             'database',
             $filesystem->getRequire(__DIR__ . '/config/database.php')
         );
-
         $this->app['config']->set(
             'logging',
             $filesystem->getRequire(BASE_DIR . 'config/logging.php')
         );
-
         $this->app['files'] = $filesystem;
     }
 }
