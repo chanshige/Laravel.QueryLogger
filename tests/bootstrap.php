@@ -2,4 +2,5 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../vendor/autoload.php';
+const BASE_DIR = __DIR__ . '/';
+require BASE_DIR . '../vendor/autoload.php';
