@@ -22,13 +22,13 @@
     "require": {
         "php": "^7.3.11",
         "psr/log": "^1.1",
-        "illuminate/contracts": "^7.0",
-        "illuminate/database": "^7.0",
-        "illuminate/log": "^7.0",
-        "illuminate/support": "^7.0",
-        "illuminate/config": "^7.0",
-        "illuminate/events": "^7.0",
-        "illuminate/filesystem": "^7.0"
+        "illuminate/contracts": "^7.0 || ^8.0",
+        "illuminate/database": "^7.0 || ^8.0",
+        "illuminate/log": "^7.0 || ^8.0",
+        "illuminate/support": "^7.0 || ^8.0",
+        "illuminate/config": "^7.0 || ^8.0",
+        "illuminate/events": "^7.0 || ^8.0",
+        "illuminate/filesystem": "^7.0 || ^8.0"
     },
     "require-dev": {
         "doctrine/coding-standard": "^8.1",
