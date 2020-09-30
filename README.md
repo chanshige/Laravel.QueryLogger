@@ -1,4 +1,4 @@
-[![Packagist](https://img.shields.io/badge/packagist-v1.0.0-blue.svg)](https://packagist.org/packages/chanshige/laravel-query-logger)
+[![Packagist](https://img.shields.io/badge/packagist-v2.0.1-blue.svg)](https://packagist.org/packages/chanshige/laravel-query-logger)
 [![Build Status](https://travis-ci.com/chanshige/Laravel.QueryLogger.svg?branch=master)](https://travis-ci.com/chanshige/Laravel.QueryLogger)
 
 # Laravel.QueryLogger
@@ -13,7 +13,7 @@ Application上で実行されるSQLクエリを全てlogへ出力します。
 ## Installation
 with composer (require-dev)
 ```shell script
-$ composer require --dev chanshige/laravel-query-logger:v1.0
+$ composer require --dev chanshige/laravel-query-logger
 ```
 
 ## Usage
@@ -21,16 +21,23 @@ remove cache
 ```
 $ php artisan clear-compiled
 ```
-  
-for logger (illuminate/log, monolog)  
-```
-$ tail -f storage/log/laravel.log
-```
+=> Output Default Log Channel  
 
-##### When specifying any log driver
+##### When specifying any log driver (option)
 append to config/logging.php
 ```
 'query_logger' => [
+    // logger driver or channel name
     'driver' => 'stack'
 ]
 ```
+[Docs](https://laravel.com/docs/7.x/logging#configuration)
+
+## test
+`$ composer tests`  
+
+## License
+MIT
+
+## Author
+[chanshige](https://twitter.com/chanshige)
