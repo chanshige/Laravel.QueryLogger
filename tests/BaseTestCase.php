@@ -31,7 +31,7 @@ abstract class BaseTestCase extends TestCase
     protected function setUp(): void
     {
         $this->app = new class () extends Container {
-            public function storagePath()
+            public function storagePath(): string
             {
                 return BASE_DIR;
             }
