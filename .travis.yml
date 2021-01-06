@@ -4,9 +4,13 @@ git:
 php:
   - 7.3
   - 7.4
+  - 8.0
 
 before_script:
+  - composer self-update
+
+install:
   - composer install --dev --prefer-source
 
 script:
-  - composer test
+  - ./vendor/bin/phpunit --coverage-clover=coverage.clover tests
