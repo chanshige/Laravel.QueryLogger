@@ -3,7 +3,7 @@
 
 # Laravel.QueryLogger
 
-Application上で実行されるSQLクエリを全てlogへ出力します。  
+Application上で実行されるSQLクエリを全てlogへ出力します。
 
 ** notice **  
     APP_DEBUG/APP_ENV 等のモードに依存していません。  
@@ -31,7 +31,7 @@ append to config/logging.php
     'driver' => 'stack'
 ]
 ```
-[Docs](https://laravel.com/docs/7.x/logging#configuration)
+[Docs](https://laravel.com/docs/9.x/logging#configuration)
 
 ## test
 `$ composer tests`  
