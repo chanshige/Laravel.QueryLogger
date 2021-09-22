@@ -35,6 +35,11 @@ abstract class BaseTestCase extends TestCase
             {
                 return BASE_DIR;
             }
+
+            public function runningUnitTests(): bool
+            {
+                return true;
+            }
         };
         $this->app->singleton('config', static function () {
             return new Repository();
