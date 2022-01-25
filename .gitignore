@@ -3,5 +3,6 @@
 .phpcs-cache
 .phpunit.result.cache
 Laravel.QueryLogger.iml
+composer.lock
 /build
 /vendor
