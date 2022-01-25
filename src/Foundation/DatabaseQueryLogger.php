@@ -18,18 +18,10 @@ use function vsprintf;
 
 class DatabaseQueryLogger
 {
-    /** @var EventDispatcher $event */
-    private $event;
-
-    /** @var LoggerInterface $logger */
-    private $logger;
-
     public function __construct(
-        EventDispatcher $event,
-        LoggerInterface $logger
+        private EventDispatcher $event,
+        private LoggerInterface $logger
     ) {
-        $this->event = $event;
-        $this->logger = $logger;
     }
 
     public function __invoke(?string $driver = null)
